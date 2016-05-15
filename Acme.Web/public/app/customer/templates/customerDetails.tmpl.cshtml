@@ -1,0 +1,22 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <span>{{vm.customer.name}}</span>
+        <button class="btn btn-sm btn-primary">Edit</button>
+        <div class="pull-right">
+            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='details'">Info</a>
+            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='opportunities'">Oppurtunities</a>
+            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='risk'">Risk</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div ng-show="vm.selectedView === 'details'" 
+             style="height:100px;background:red">
+        </div>
+        <div ng-show="vm.selectedView === 'opportunities'"
+             style="height:100px;background:green">
+        </div>
+        <div ng-show="vm.selectedView === 'risk'"
+             style="height:100px;background:blue">
+        </div>
+    </div>
+</div>

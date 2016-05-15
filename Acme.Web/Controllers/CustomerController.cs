@@ -9,11 +9,15 @@ namespace Acme.Web.Controllers
     {
         private readonly AcmeContext _context = new AcmeContext();
 
-
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
-            return View(customers);
+            return View();
+        }
+
+        public JsonResult All()
+        {
+            var customers = _context.Customers.ToArray();
+            return BetterJson(customers);
         }
     }
 }

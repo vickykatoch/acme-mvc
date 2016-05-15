@@ -3,9 +3,12 @@
     ViewBag.Title = "Customers";
 }
 
-<div class="page-header">
+<div class="page-header" ng-controller="CustomerListController as vm">
     <h1>
         Customers
         <button class="btn btn-sm btn-primary pull-right">New</button>
     </h1>
+    <div ng-repeat="cust in vm.customers">
+        <customer-details customer="cust" />
+    </div>
 </div>
