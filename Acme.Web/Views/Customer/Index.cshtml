@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Acme.Domain.Customer>
+<!DOCTYPE html>
+
+<h1>Customers</h1>
+
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email (Personal)</th>
+            <th>Phone (Work)</th>
+            <th>Phone (Home)</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.Encode(customer.Name)</td>
+                <td>@Html.Encode(customer.HomeEmail)</td>
+                <td>@Html.Encode(customer.WorkPhone)</td>
+                <td>@Html.Encode(customer.HomePhone)</td>
+                <td>@Html.Encode(customer.HomeAddress)</td>
+            </tr>
+        }
+    </tbody>
+</table>
