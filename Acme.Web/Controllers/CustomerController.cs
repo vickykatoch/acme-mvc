@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Acme.Web.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : AcmeControllerBase
     {
         private readonly AcmeContext _context = new AcmeContext();
 

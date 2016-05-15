@@ -1,0 +1,38 @@
+﻿@using Acme.Web.Helpers
+@model Acme.Web.Models.ProfileModel
+
+@{ 
+    ViewBag.Title = "Profile";
+}
+<h1 class="page-header">Update Your Profile</h1>
+<form novalidate
+      ng-controller="EditProfileController as vm"
+      ng-submit="vm.save()">
+    <fieldset>
+        <div class="form-group">
+            <label class="control-label" for="FullName">Full Name</label>
+            <input required ng-model="vm.profile.fullName"
+                   class="form-control" name="FullName" type="text" placeholder="Your full name...">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="Email">Email</label>
+            <input required ng-model="vm.profile.emailAddress"
+                   class="form-control" name="EmailAddress" type="text" placeholder="Your email address...">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success btn-sm">Save Changes</button>
+            <a class="btn btn-warning btn-sm" href="/">Cancel</a>
+        </div>
+    </fieldset>
+</form>
+
+@section Scripts
+{
+    <script>
+        @*var url = '@Html.BuildFromExpression<ProfileController>(c=>c.Update(null)))';
+        window.acmeApp.constant('editProfileConfig', {
+            saveUrl : url
+        });*@
+        window.acmeApp.constant('model', @Html.JsonFor(Model));
+    </script>
+}
