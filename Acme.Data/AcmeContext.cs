@@ -8,7 +8,7 @@ namespace Acme.Data
         #region ctor
         public AcmeContext() : base("AcmeContext")
         {
-
+            Configuration.LazyLoadingEnabled = true;
         }
         #endregion
 

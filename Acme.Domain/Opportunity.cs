@@ -2,7 +2,7 @@
 
 namespace Acme.Domain
 {
-    public class Opportunity
+    public class Opportunity : Entity
     {
         public int Id { get; set; }
 
@@ -13,7 +13,7 @@ namespace Acme.Domain
         public DateTime CreateDate { get; set; }
 
         public Customer Customer { get; set; }
-
+        public override bool IsNew { get { return Id == 0; } }
         public Opportunity()
         {
             CreateDate = DateTime.Now;

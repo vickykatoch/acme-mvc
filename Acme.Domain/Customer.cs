@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Acme.Domain
 {
-    public class Customer
+    public class Customer : Entity
     {
         public int Id { get; set; }
 
@@ -25,9 +25,11 @@ namespace Acme.Domain
 
         public DateTime? TerminationDate { get; set; }
 
-        public IList<Opportunity> Opportunities { get; set; }
+        public virtual ICollection<Opportunity> Opportunities { get; set; }
 
-        public IList<Risk> Risks { get; set; }
+        public virtual ICollection<Risk> Risks { get; set; }
+
+        public override bool IsNew { get { return Id == 0; } }
 
         public Customer()
         {

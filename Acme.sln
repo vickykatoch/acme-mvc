@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Data", "Acme.Data\Acme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Web", "Acme.Web\Acme.Web.csproj", "{C41DC107-DE5D-4039-80D4-3443D615937C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Data.Tests", "Acme.Data.Tests\Acme.Data.Tests.csproj", "{FCCD792A-78F9-4E93-ADF2-A64EC0915185}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C41DC107-DE5D-4039-80D4-3443D615937C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C41DC107-DE5D-4039-80D4-3443D615937C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C41DC107-DE5D-4039-80D4-3443D615937C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
