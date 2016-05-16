@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -170,6 +174,7 @@
     <Compile Include="Controllers\AcmeControllerBase.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OpportunityController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,6 +182,7 @@
     </Compile>
     <Compile Include="Helpers\JsonHtmlHelpers.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\OpportunityModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Xtns\DateExtensions.cs" />
@@ -188,7 +194,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -201,9 +210,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="public\app\app.js" />
+    <Content Include="public\app\customer\AddCustomerDirective.js" />
     <Content Include="public\app\customer\CustomerDetailsDirective.js" />
     <Content Include="public\app\customer\CustomerListController.js" />
     <Content Include="public\app\customer\CustomerService.js" />
+    <Content Include="public\app\customer\EditCustomerDirective.js" />
+    <Content Include="public\app\opportunity\addOpportunityDirective.js" />
     <Content Include="public\app\profile\editprofilecontroller.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -219,6 +231,13 @@
     <Content Include="public\app\customer\templates\customerDetails.tmpl.cshtml" />
     <Content Include="public\app\Web.config" />
     <Content Include="public\app\customer\templates\addCustomer.tmpl.cshtml" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="public\app\opportunity\templates\addOpportunity.tmpl.cshtml" />
+    <Content Include="public\app\customer\templates\editCustomer.tmpl.cshtml" />
     <None Include="Scripts\jquery-2.2.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

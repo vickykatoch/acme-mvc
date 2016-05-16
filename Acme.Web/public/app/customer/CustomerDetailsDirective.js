@@ -12,11 +12,25 @@
         }
     }]);
 
-    CustDetailsController.$inject = ['$scope']
-    function CustDetailsController($scope) {
+    CustDetailsController.$inject = ['$scope', '$uibModal'];
+    function CustDetailsController($scope, $model) {
         var vm = this;
         vm.customer = $scope.customer;
         vm.selectedView = 'details';
+
+        vm.edit= function() {
+            $model.open({
+				template: '<edit-customer customer="customer" />',
+				scope: angular.extend($scope.$new(true), { customer: vm.customer })
+			});
+		}
+
+        vm.addOpportunity = function () {
+            $model.open({
+                template: '<add-opportunity customer="customer" />',
+                scope: angular.extend($scope.$new(true), { customer: vm.customer })
+            });
+        }
     }
 })();
 

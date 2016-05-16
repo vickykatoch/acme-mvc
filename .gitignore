@@ -235,3 +235,4 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 Acme.Web/Scripts
+Acme.Web/fonts

@@ -1,9 +1,9 @@
 ﻿<form novalidate
       name="vm.form"
-	  ng-submit="vm.form.$valid && vm.add()">
+      ng-submit="vm.form.$valid && vm.update()">
     <fieldset ng-disabled="vm.saving">
         <div class="modal-header">
-            <h3 class="modal-title">Add New Customer</h3>
+            <h3 class="modal-title">Edit Customer</h3>
         </div>
         <div class="modal-body">
 
@@ -19,7 +19,7 @@
         </div>
 
         <div class="modal-footer">
-            <button class="btn btn-success">Add</button>
+            <button class="btn btn-success">Update</button>
             <button type="button" class="btn btn-warning" ng-click="$dismiss()">Cancel</button>
         </div>
 

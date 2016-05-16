@@ -12,7 +12,8 @@ namespace Acme.Web.Xtns
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 Converters = new JsonConverter[] { new StringEnumConverter() },
-                NullValueHandling = includeNull ? NullValueHandling.Include : NullValueHandling.Ignore
+                NullValueHandling = includeNull ? NullValueHandling.Include : NullValueHandling.Ignore,
+                ReferenceLoopHandling =  ReferenceLoopHandling.Ignore
             };
             return JsonConvert.SerializeObject(obj, settings);
         }

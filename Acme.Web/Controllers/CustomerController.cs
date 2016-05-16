@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Acme.Web.Controllers
 {
@@ -16,7 +17,8 @@ namespace Acme.Web.Controllers
 
         public JsonResult All()
         {
-            var customers = _context.Customers.ToArray();
+            var customers = _context.Customers.Include(X=>X.Opportunities)
+                .Include(x=>x.Risks).ToArray();
             return BetterJson(customers);
         }
     }

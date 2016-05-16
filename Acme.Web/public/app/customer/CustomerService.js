@@ -1,6 +1,7 @@
 ﻿(function(){
     'use strict';
-    window.acmeApp.factory('CustomerService', ['$http','$q', function ($http,$q) {
+    window.acmeApp.factory('CustomerService', ['$http', '$q', function ($http, $q) {
+        var customers = [];
         var svc = {
             add: add,
             update: update,
@@ -14,7 +15,10 @@
             });
         }
         function add(customer) {
-
+            return $http.post('/Customer/Add', customer)
+				.success(function (customer) {
+				    customers.unshift(customer);
+				});
         }
         function update(customer) {
 

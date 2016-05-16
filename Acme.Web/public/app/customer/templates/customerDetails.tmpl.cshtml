@@ -1,22 +1,76 @@
 ﻿<div class="panel panel-default">
     <div class="panel-heading">
         <span>{{vm.customer.name}}</span>
-        <button class="btn btn-sm btn-primary">Edit</button>
+        <button class="btn btn-sm btn-primary" ng-click="vm.edit()">Edit</button>
         <div class="pull-right">
-            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='details'">Info</a>
-            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='opportunities'">Oppurtunities</a>
-            <a class="btn btn-sm btn-primary" ng-click="vm.selectedView='risk'">Risk</a>
+            <a class="btn btn-sm" ng-click="vm.selectedView='details'" ng-class="{'btn-primary' : vm.selectedView === 'details'}">Info</a>
+            <a class="btn btn-sm" ng-click="vm.selectedView='opportunities'" ng-class="{'btn-primary' : vm.selectedView === 'opportunities'}">Oppurtunities</a>
+            <a class="btn btn-sm" ng-click="vm.selectedView='risk'" ng-class="{'btn-primary' : vm.selectedView === 'risk'}">Risk</a>
         </div>
     </div>
     <div class="panel-body">
-        <div ng-show="vm.selectedView === 'details'" 
-             style="height:100px;background:red">
+        <div ng-show="vm.selectedView === 'details'" >
+            <table class="table table-condensed">
+                <tr>
+                    <th>Email</th>
+                    <td>Work : {{vm.customer.workEmail}}<br />Home : {{vm.customer.homeEmail}}</td>
+                    <th>Phone</th>
+                    <td>
+                        Office : {{vm.customer.workPhone}}<br />
+                        Home : {{vm.customer.homePhone}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Work Address</th>
+                    <td>{{vm.customer.workAddress}}</td>
+                    <th>Home Address</th>
+                    <td>{{vm.customer.homeAddress}}</td>
+                </tr>
+            </table>
         </div>
-        <div ng-show="vm.selectedView === 'opportunities'"
-             style="height:100px;background:green">
+        <div ng-show="vm.selectedView === 'opportunities'">
+            <div class="row">
+                <div class="col-md-1">
+                    <span class="fa fa-2x fa-dollar text-success"></span>
+                </div>
+                <div class="col-md-11">
+                    <div ng-repeat="op in vm.customer.opportunities">
+                        <hr ng-hide="$index == 0" />
+                        <h3>{{op.title}}</h3>
+                        <p>{{op.description}}</p>
+                    </div>
+                    <p>
+                        <a class="add-btn" href="" ng-click="vm.addOpportunity()">Add a new opportunity</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div ng-show="vm.selectedView === 'risk'"
-             style="height:100px;background:blue">
+        <div ng-show="vm.selectedView === 'risk'">
+            <div class="row">
+                <div class="col-md-1 half">
+                    <span class="fa fa-2x fa-warning text-danger"></span>
+                </div>
+                <div class="col-md-11">
+                    <p ng-show="vm.customer.risks && vm.customer.risks.length == 0">There are no risks for this customer.</p>
+
+                    <div ng-repeat="risk in vm.customer.risks">
+                        <hr ng-hide="$index == 0" />
+                        <h3>{{risk.title}}</h3>
+                        <p>{{risk.description}}</p>
+                    </div>
+                    @*@using (var risk = customer.Repeat(x => x.Risks, "risk"))
+                    {
+                        <hr ng-hide="$index == 0" />
+                        <h3>
+                            @risk.BindingFor(x => x.Title)
+                        </h3>
+                        <p>@risk.BindingFor(x => x.Description)</p>
+                    }*@
+                    <p>
+                        <a class="add-btn" href="" ng-click="vm.addRisk()">Add a new risk</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
