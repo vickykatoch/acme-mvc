@@ -9,18 +9,19 @@ namespace Acme.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/all.js").Include(
-                "~/Scripts/jquery-2.2.1.js",
+                "~/Scripts/jquery-2.2.3.js",
+                "~/Scripts/bootstrap.js",
                 "~/Scripts/angular.js",
                 
                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js"
                 ).IncludeDirectory("~/public/app/","*.js",true));
             bundles.Add(new StyleBundle("~/Content/css/all.css").Include(
+                "~/css/css/font-awesome.css",
                 "~/Content/bootstrap.css",
-                "~/Content/bootstrap-theme.css",
-                "~/css/font-awesome.css",
+                "~/Content/layout.css",
                 "~/Content/Site.css"
                 ));
-           
+            //"~/Content/bootstrap-theme.css",
         }
     }
 }
