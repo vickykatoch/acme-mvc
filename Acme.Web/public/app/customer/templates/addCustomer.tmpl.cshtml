@@ -1,4 +1,12 @@
-﻿<form novalidate
+﻿@using Acme.Web.Helpers
+@model Acme.Web.Models.CustomerModel
+@{ 
+
+}
+
+
+
+<form novalidate
       name="vm.form"
 	  ng-submit="vm.form.$valid && vm.add()">
     <fieldset ng-disabled="vm.saving">
@@ -13,9 +21,7 @@
             <div class="alert alert-danger" ng-show="vm.errorMessage != null">
                 {{vm.errorMessage}}
             </div>
-
-            @*@Html.Angular().FormForModel("vm.customer")*@
-
+            @Html.Angular().FormForModel("vm.customer")
         </div>
 
         <div class="modal-footer">

@@ -1,6 +1,11 @@
-﻿<div class="panel panel-default">
+﻿@using Acme.Web.Helpers
+@model Acme.Web.Models.CustomerModel
+@{ 
+    var customer = Html.Angular().ModelFor("vm.customer");
+}
+<div class="panel panel-default">
     <div class="panel-heading">
-        <span>{{vm.customer.name}}</span>
+        <span>@customer.BindingFor(x=>x.Name)</span>
         <button class="btn btn-sm btn-primary" ng-click="vm.edit()">Edit</button>
         <div class="pull-right">
             <a class="btn btn-sm" ng-click="vm.selectedView='details'" ng-class="{'btn-primary' : vm.selectedView === 'details'}">Info</a>
@@ -13,18 +18,19 @@
             <table class="table table-condensed">
                 <tr>
                     <th>Email</th>
-                    <td>Work : {{vm.customer.workEmail}}<br />Home : {{vm.customer.homeEmail}}</td>
+                    <td>Work : @customer.BindingFor(x => x.WorkEmail) 
+                    <br />Home : @customer.BindingFor(x => x.HomeEmail)</td>
                     <th>Phone</th>
                     <td>
-                        Office : {{vm.customer.workPhone}}<br />
-                        Home : {{vm.customer.homePhone}}
+                        Office : @customer.BindingFor(x => x.WorkPhone) <br />
+                        Home : @customer.BindingFor(x => x.HomePhone)
                     </td>
                 </tr>
                 <tr>
                     <th>Work Address</th>
-                    <td>{{vm.customer.workAddress}}</td>
+                    <td>@customer.BindingFor(x => x.WorkAddress)</td>
                     <th>Home Address</th>
-                    <td>{{vm.customer.homeAddress}}</td>
+                    <td>@customer.BindingFor(x => x.HomeAddress)</td>
                 </tr>
             </table>
         </div>

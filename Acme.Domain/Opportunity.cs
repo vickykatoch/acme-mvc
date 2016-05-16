@@ -11,7 +11,6 @@ namespace Acme.Domain
         public string Description { get; set; }
 
         public DateTime CreateDate { get; set; }
-
         public Customer Customer { get; set; }
         public override bool IsNew { get { return Id == 0; } }
         public Opportunity()

@@ -12,6 +12,12 @@ namespace Acme.Data
         }
         #endregion
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder); 
+        }
+
+
         #region DBSets
         public IDbSet<Customer> Customers { get; set; }
         public IDbSet<Opportunity> Opportunities { get; set; }

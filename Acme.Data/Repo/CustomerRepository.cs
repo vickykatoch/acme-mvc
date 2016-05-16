@@ -13,8 +13,14 @@ namespace Acme.Data.Repo
         {
             
         }
+        public Customer FecthById(int id, bool include)
+        {
+            return _context.Customers
+                .Include(c => c.Risks)
+                .Include(c=>c.Opportunities)
+                .Where(r => r.Id == id).FirstOrDefault();
+        }
 
 
-        
     }
 }

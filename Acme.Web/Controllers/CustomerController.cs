@@ -1,14 +1,20 @@
-﻿using Acme.Data;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Acme.Data.Repo;
+using Acme.Domain;
 using System.Linq;
+using System;
+using AutoMapper.QueryableExtensions;
+using Acme.Web.Models;
+using Acme.Web.Xtns;
+using AutoMapper;
 using System.Collections.Generic;
-using System.Data.Entity;
 
 namespace Acme.Web.Controllers
 {
     public class CustomerController : AcmeControllerBase
     {
-        private readonly AcmeContext _context = new AcmeContext();
+        private readonly IRepository<Customer> repository =
+            new Repository<Customer>();
 
         public ActionResult Index()
         {
@@ -17,9 +23,18 @@ namespace Acme.Web.Controllers
 
         public JsonResult All()
         {
-            var customers = _context.Customers.Include(X=>X.Opportunities)
-                .Include(x=>x.Risks).ToArray();
-            return BetterJson(customers);
+            ModelViewModelMapper.Map();
+            var customers = Mapper
+                .Map<IEnumerable<CustomerModel>>(repository.FetchAll());
+            return BetterJson(customers.ToArray());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            repository.Dispose();
+            base.Dispose(disposing);
+        }
+
+        
     }
 }

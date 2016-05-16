@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Acme.Domain;
+using AutoMapper;
+using System;
 using System.Collections.Generic;
 
-namespace Acme.Web.Models
+namespace ConsoleApplication1.Model
 {
-    public class CustomerModel
+    class CustomerModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

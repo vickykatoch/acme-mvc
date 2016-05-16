@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Web", "Acme.Web\Acme.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Data.Tests", "Acme.Data.Tests\Acme.Data.Tests.csproj", "{FCCD792A-78F9-4E93-ADF2-A64EC0915185}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B74B924E-5F1E-49E6-843F-63E104655D0D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{94A30343-0482-4C6B-AF15-EE54377C4A21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +40,10 @@ Global
 		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCCD792A-78F9-4E93-ADF2-A64EC0915185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A30343-0482-4C6B-AF15-EE54377C4A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A30343-0482-4C6B-AF15-EE54377C4A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A30343-0482-4C6B-AF15-EE54377C4A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A30343-0482-4C6B-AF15-EE54377C4A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
