@@ -8,6 +8,7 @@ using Acme.Web.Models;
 using Acme.Web.Xtns;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Acme.Web.Controllers
 {
@@ -19,6 +20,18 @@ namespace Acme.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Add(CustomerModel customer)
+        {
+            ModelViewModelMapper.Map();
+            var model = Mapper.Map<Customer>(customer);
+            if (repository.Save(model))
+            {
+                return BetterJson(Mapper.Map<Customer>(model));
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
         }
 
         public JsonResult All()
