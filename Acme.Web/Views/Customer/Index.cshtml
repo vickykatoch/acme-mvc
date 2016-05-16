@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using Acme.Web.Helpers
+@model IEnumerable<Acme.Web.Models.CustomerModel>
 @{ 
     ViewBag.Title = "Customers";
 }
@@ -12,3 +13,10 @@
         <customer-details customer="cust" />
     </div>
 </div>
+
+@section Scripts
+{
+    <script>
+        window.acmeApp.constant('CustomerModel', @Html.JsonFor(Model))
+    </script>
+}

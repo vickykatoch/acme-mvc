@@ -11,7 +11,7 @@
 
         function all() {
             return $q(function (resolve, reject) {
-                $http.post('/Customer/All').then(function (response) { resolve(response.data); }, function (err) { reject(err); });
+                $http.get('/Customer/All').then(function (response) { resolve(response.data); }, function (err) { reject(err); });
             });
         }
         function add(customer) {

@@ -29,10 +29,6 @@
 @section Scripts
 {
     <script>
-        @*var url = '@Html.BuildFromExpression<ProfileController>(c=>c.Update(null)))';
-        window.acmeApp.constant('editProfileConfig', {
-            saveUrl : url
-        });*@
         window.acmeApp.constant('model', @Html.JsonFor(Model));
     </script>
 }

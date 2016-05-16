@@ -19,7 +19,11 @@ namespace Acme.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            ModelViewModelMapper.Map();
+            var customers = Mapper
+                .Map<IEnumerable<CustomerModel>>(repository.FetchAll());
+            //return BetterJson(customers.ToArray());
+            return View(customers);
         }
 
         [HttpPost]
