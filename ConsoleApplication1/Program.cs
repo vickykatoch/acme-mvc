@@ -4,6 +4,7 @@ using Acme.Domain;
 using AutoMapper;
 using ConsoleApplication1.Model;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace ConsoleApplication1
@@ -12,10 +13,23 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Oppurtunities();
-            Customers();
-            
-            Risk();
+            LinqQueries();
+            //Oppurtunities();
+            //Customers();
+
+            //Risk();
+            Console.Read();
+        }
+        static void LinqQueries()
+        {
+            double[] doubles = { 1.7, 2.3, 1.9, 4.1, 2.9 };
+
+            //int[] array = { 1, 3, 5, 7 };
+            //array
+            //    .GroupBy(a => a % 2 == 0)
+            //    .ToDictionary(grp => grp.Key, grp => grp.Count());
+
+
         }
         static void Customers()
         {
